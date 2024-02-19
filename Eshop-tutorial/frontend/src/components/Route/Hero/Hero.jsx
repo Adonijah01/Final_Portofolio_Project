@@ -15,13 +15,16 @@ const Hero = () => {
         <h1
           className={`text-[35px] leading-[1.2] 800px:text-[60px] text-[#3d3a3a] font-[600] capitalize`}
         >
-          Best Collection for <br /> home Decoration
+          Best Collections <br /> you and your family.
         </h1>
         <p className="pt-5 text-[16px] font-[Poppins] font-[400] text-[#000000ba]">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae,
-          assumenda? Quisquam itaque <br /> exercitationem labore vel, dolore
-          quidem asperiores, laudantium temporibus soluta optio consequatur{" "}
-          <br /> aliquam deserunt officia. Dolorum saepe nulla provident.
+        A Symphony of Sellers, A Symphony of Choices - Immerse yourself in the enchanting orchestration of our marketplace, 
+        where a diverse ensemble of sellers contributes to a harmonious shopping experience.<br/>
+        Explore the virtuosity of our sellers, each playing a unique note in the grand symphony of offerings.<br/>
+        From the lyrical elegance of handmade crafts to the powerful crescendo of cutting-edge technology,<br/> every seller adds a distinctive melody to your shopping journey.
+
+{" "}
+          <br /> In this symphony of commerce, sellers are the virtuosos, and choices are the melodies that resonate with your desires.
         </p>
         <Link to="/products" className="inline-block">
             <div className={`${styles.button} mt-5`}>
