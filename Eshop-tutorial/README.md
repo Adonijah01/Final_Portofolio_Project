@@ -1,1 +1,1 @@
-@copyright by becodemy 2023
+Multi-Vendor Ecommerce Web Application.

@@ -39,7 +39,7 @@ router.post("/create-shop", catchAsyncErrors(async (req, res, next) => {
 
     const activationToken = createActivationToken(seller);
 
-    const activationUrl = `http://localhost:3002/seller/activation/${activationToken}`;
+    const activationUrl = `http://localhost:3000/seller/activation/${activationToken}`;
 
     try {
       await sendMail({
@@ -49,7 +49,7 @@ router.post("/create-shop", catchAsyncErrors(async (req, res, next) => {
       });
       res.status(201).json({
         success: true,
-        message: `please check your email:- ${seller.email} to activate your shop!`,
+        message: `please check your email:- ${seller.email} to activate your shop account!`,
       });
     } catch (error) {
       return next(new ErrorHandler(error.message, 500));
@@ -62,7 +62,7 @@ router.post("/create-shop", catchAsyncErrors(async (req, res, next) => {
 // create activation token
 const createActivationToken = (seller) => {
   return jwt.sign(seller, process.env.ACTIVATION_SECRET, {
-    expiresIn: "5m",
+    expiresIn: "3600s",
   });
 };
 
@@ -72,17 +72,19 @@ router.post(
   catchAsyncErrors(async (req, res, next) => {
     try {
       const { activation_token } = req.body;
+      //console.log(activation_token);
 
       const newSeller = jwt.verify(
         activation_token,
         process.env.ACTIVATION_SECRET
       );
+      //console.log('verifying');
 
       if (!newSeller) {
         return next(new ErrorHandler("Invalid token", 400));
       }
-      const { name, email, password, avatar, zipCode, address, phoneNumber } =
-        newSeller;
+      const { name, email, password, avatar, zipCode, address, phoneNumber } = newSeller;
+      //console.log(newSeller);
 
       let seller = await Shop.findOne({ email });
 
