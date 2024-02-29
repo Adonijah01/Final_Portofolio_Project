@@ -77,7 +77,7 @@ const AllRefundOrders = () => {
       row.push({
         id: item._id,
         itemsQty: item.cart.length,
-        total: "KSH " + item.totalPrice,
+        total: "US$ " + item.totalPrice,
         status: item.status,
       });
     });
