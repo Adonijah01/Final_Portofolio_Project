@@ -336,7 +336,7 @@ const CartData = ({
         <input
           type="text"
           className={`${styles.input} h-[40px] pl-2`}
-          placeholder="Coupon code"
+          placeholder="Coupon111code"
           value={couponCode}
           onChange={(e) => setCouponCode(e.target.value)}
           required
