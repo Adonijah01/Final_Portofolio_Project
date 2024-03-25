@@ -1,1 +1,0 @@
-Multi-Vendor Ecommerce Web Application.
